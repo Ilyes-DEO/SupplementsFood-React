@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#Category
+
+.btnCenter {
+    text-align: center;
+    color: white;
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 10px; /* Ajustez la valeur selon vos besoins */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; 
+  }
+
+
+:root {
+    --bg: #1a1e24;
+    --color: #eee;
+    --font: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+}
+
+
+body { 
+    background: var(--bg)
+}
