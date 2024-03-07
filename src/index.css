@@ -15,19 +15,21 @@
 
 .buttonContainer {
     display: flex;
-    gap: 10px; /* Ajustez la valeur selon vos besoins */
-    justify-content: center; /* Centre horizontalement */
+    gap: 10px;
+    justify-content: center;
     align-items: center; 
   }
 
 
 :root {
-    --bg: #1a1e24;
+    --bg: #F2F2F2;
     --color: #eee;
-    --font: Montserrat, Roboto, Helvetica, Arial, sans-serif;
 }
-
 
 body { 
-    background: var(--bg)
+    background: var(--bg) !important;
+    font-family: "Inter", sans-serif;
 }
+
+
+

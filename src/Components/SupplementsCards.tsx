@@ -59,7 +59,7 @@ const SupplementsCards = () => {
                 <Typography variant="body2">{supplement.maker}</Typography>
                 <Typography
                   level="title-lg"
-                  sx={{ mt: 1, fontWeight: 'xl', color: 'red' }}
+                  sx={{ mt: 1, fontWeight: 'xl', color: 'black' }}
                 >
                   {supplement.price.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })}
                 </Typography>

@@ -59,7 +59,6 @@ const CategoryFilter = () => {
     <div>
       <br />
       {isSmallScreen ? (
-        // Centrer la liste pour les petits écrans
         <div style={{ margin: 'auto', maxWidth: '600px' }}>
           <List>
             <ListItem
@@ -84,20 +83,19 @@ const CategoryFilter = () => {
           </List>
         </div>
       ) : (
-        // Affichage pour les écrans plus larges
         <div className="buttonContainer">
           <Button
             key={0}
             className='buttonCat'
             variant="outlined"
             style={{
-              color: 'white',
-              borderColor: 'white',
+              color: 'black',
+              borderColor: 'black',
               backgroundColor: selectedCategory === null ? 'grey' : 'transparent',
             }}
             onClick={() => handleShowAllClick()}
           >
-            Toutes les cat
+            Tous les produits
           </Button>
           {categories.map((category) => (
             <Button
@@ -105,8 +103,8 @@ const CategoryFilter = () => {
               className='buttonCat'
               variant="outlined"
               style={{
-                color: 'white',
-                borderColor: 'white',
+                color: 'black',
+                borderColor: 'black',
                 backgroundColor: selectedCategory === category.id ? 'grey' : 'transparent',
               }}
               onClick={() => handleCategoryClick(category.id)}
@@ -132,7 +130,7 @@ const CategoryFilter = () => {
                   <CardContent sx={{ textAlign: 'center' }}>
                     <Typography level="title-lg">{supplement.name}</Typography>
                     <Typography variant="body2">{supplement.maker}</Typography>
-                    <Typography variant="h6" sx={{ mt: 1, fontWeight: 'bold', color: 'red' }}>
+                    <Typography variant="h6" sx={{ mt: 1, fontWeight: 'xl', color: 'black' }}>
                       {supplement.price.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })}
                     </Typography>
                   </CardContent>

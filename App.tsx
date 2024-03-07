@@ -1,24 +1,28 @@
 import { useState } from 'react'
-import Navbar from './src/Components/Navbar'
-import { Route, Routes } from 'react-router-dom';
+import { Navbar } from './src/Components/Navbar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CategoryFilter from './src/Components/CategoryFilter';
-import SupplementsFood from './src/Pages/SupplementsFood';
 import SupplementsDetails from './src/Components/SupplementsDetails';
-import SupplementsCards from './src/Components/SupplementsCards';
-
+import LoginForm from './src/Components/LoginForm';
+import Basket from './src/Components/Basket';
+import { AuthProvider } from './src/Components/AuthContext';
+import HomePage from './src/Components/Pages/HomePage';
 function App() {
   return (
+    <AuthProvider>
     <div>
       <Navbar />
       <Routes>
+          <Route path="/" element={<HomePage />} />
           <Route path="/Category" element={<CategoryFilter />} />
           <Route path="/Supplements" element={<CategoryFilter />} />
           <Route path="/Supplements/:id" element={<SupplementsDetails />} />
-          <Route path="/Supplementss" element={<SupplementsCards />} />
-
+          <Route path="/LoginForm" element={<LoginForm />} />
+          <Route path="/Basket" element={<Basket />} />
         </Routes>
     </div>
- 
+    </AuthProvider>
+
     )
 }
 
