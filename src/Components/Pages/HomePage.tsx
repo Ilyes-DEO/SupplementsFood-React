@@ -7,6 +7,7 @@ import { CarouselDemo } from '../Molecules/Carousel';
 import { FooterComponent } from '../Organismes/Footer';
 import { TabsSupplements } from '../Organismes/TabsSupplements';
 import CategoryFilter from '../CategoryFilter';
+import PopularySupplementsCards from '../Organismes/PopularySupplements';
 const HomePage = () => {
   return (
     <div>
@@ -15,7 +16,7 @@ const HomePage = () => {
         <BarStepper />
         <ImageBand />
         <TitleHome />
-        <CategoryFilter />
+        <PopularySupplementsCards />
         <FooterComponent />
         </div>
         

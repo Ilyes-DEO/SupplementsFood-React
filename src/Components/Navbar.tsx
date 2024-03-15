@@ -67,7 +67,7 @@ export function Navbar() {
               BLOG
             </a>
             <a href="#" className={`${classes.link} ${classes.linkText}`}>
-              Academy
+              ACADEMY
             </a>
           </Group>
           <Group visibleFrom="sm">
