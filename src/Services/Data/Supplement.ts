@@ -5,7 +5,7 @@ export interface Supplements {
     category: string;
     qte_stock: number;
     price: number;
-    maker: string;
+    maker: Maker[];
     flavors: Flavor[];
     quantity_dosage: Quantity[];
   }
@@ -19,3 +19,9 @@ export interface Flavor {
 id: number;
 name: string;
 }
+
+export interface Maker {
+  id: number;
+  name_maker: string;
+  }
+  

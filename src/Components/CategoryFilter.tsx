@@ -22,9 +22,14 @@ const CategoryFilter = () => {
   interface Supplement {
     id: number;
     name: string;
-    maker: string;
+    maker: Maker[];
     price: number;
     img_supplements: string;
+  }
+
+  interface Maker {
+    id: number,
+    name_maker: string
   }
 
   useEffect(() => {
@@ -129,7 +134,10 @@ const CategoryFilter = () => {
               </AspectRatio>
                   <CardContent sx={{ textAlign: 'center' }}>
                     <Typography level="title-lg">{supplement.name}</Typography>
-                    <Typography variant="body2">{supplement.maker}</Typography>
+                    <Typography variant="body2">
+                      {supplement.maker?.map((m) => m.name_maker).join(", ") || "Pas de fabricant"}
+                    </Typography>
+
                     <Typography variant="h6" sx={{ mt: 1, fontWeight: 'xl', color: 'black' }}>
                       {supplement.price.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })}
                     </Typography>

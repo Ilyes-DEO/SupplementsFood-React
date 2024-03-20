@@ -1,6 +1,7 @@
 import { Image } from '@mantine/core';
 import { Box } from '@mantine/core';
 
+
 export function TitleHome() {
   return (
     <Box pb={30}>

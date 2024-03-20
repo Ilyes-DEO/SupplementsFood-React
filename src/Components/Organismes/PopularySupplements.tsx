@@ -17,9 +17,13 @@ const PopularySupplementsCards = () => {
     category: string;
     qte_stock: number;
     price: number;
-    maker: string;
+    maker: Maker[];
   }
   
+  interface Maker {
+    id: number;
+    name_maker: string;
+  }
   useEffect(() => {
     axios
       .post(
@@ -56,7 +60,9 @@ const PopularySupplementsCards = () => {
               </AspectRatio>
               <CardContent sx={{ textAlign: 'center' }}>
                 <Typography level="title-lg">{supplement.name}</Typography>
-                <Typography variant="body2">{supplement.maker}</Typography>
+                <Typography variant="body2">
+                  {supplement.maker.map((m) => m.name_maker).join(", ")}
+                </Typography>                
                 <Typography
                   level="title-lg"
                   sx={{ mt: 1, fontWeight: 'xl', color: 'black' }}

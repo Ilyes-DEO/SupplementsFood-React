@@ -10,7 +10,7 @@ export function CarouselDemo() {
     <Box pb={10}>
       <Carousel
         withIndicators
-        style={{ height: '450px' }} 
+        style={{ height: '600px' }} 
         plugins={[autoplay.current]}
         onMouseEnter={autoplay.current.stop}
         onMouseLeave={autoplay.current.reset}
@@ -20,7 +20,7 @@ export function CarouselDemo() {
             src="https://images.unsplash.com/photo-1610360393708-368da8ca8763?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="First slide"
             fit="cover"
-            style={{ height: '450px' }} 
+            style={{ height: '600px' }} 
         />
         </Carousel.Slide>
         <Carousel.Slide>
