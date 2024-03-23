@@ -1,4 +1,4 @@
-import { Flavor } from "../../Services/Data/Supplement";
+import { Flavor } from "../../Services/Data/SupplementInterfaces";
 
 interface SelectFlavorProps {
     flavors: Flavor[];

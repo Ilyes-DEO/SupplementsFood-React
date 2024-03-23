@@ -1,5 +1,5 @@
-import classes from './MantineCss/HeaderMegaMenu.module.css';
-import NutriZenoPng from '../Components/MantineCss/NutriZenoLogo.png';
+import classes from '../MantineCss/HeaderMegaMenu.module.css';
+import NutriZenoPng from '../MantineCss/NutriZenoLogo.png';
 import {
   HoverCard,
   Group,

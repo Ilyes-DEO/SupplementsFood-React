@@ -1,3 +1,9 @@
+export interface Category {
+  id: number;
+  name: string;
+  supplements: Supplements[];
+}
+
 export interface Supplements {
     id: number;
     name: string;
@@ -23,5 +29,6 @@ name: string;
 export interface Maker {
   id: number;
   name_maker: string;
-  }
+}
   
+

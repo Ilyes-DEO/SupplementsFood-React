@@ -4,25 +4,32 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import { Button } from 'react-bootstrap';
-import axios from 'axios';
 import Typography from '@mui/joy/Typography';
 import BasicRating from './Atomes/Rating';
 import RetailComponenent from './Molecules/DetailContainer';
-import { Supplements,Quantity,Flavor} from '../Services/Data/Supplement';
 import  SelectFlavor  from './Atomes/SelectFlavor';
 import RadioContainer from './Molecules/RadioContainer';
 import RadioQuantity from './Atomes/RadioQuantity';
 import SelectEmpty from './Atomes/SelectEmpty';
 import { TabsSupplements } from './Organismes/TabsSupplements';
+import { Supplements } from '../Services/Data/SupplementInterfaces'; 
+import { loginAndGetToken, fetchSupplementDetails } from '../Services/Data/apiServices';
 
 const SupplementsDetails = () => {
   const { id } = useParams();
-  const [supplementData, setSupplementData] = useState<Supplements | null>(null);
+  const [supplementData, setSupplementData] = useState<Supplements[]>([]);
   const [state, setState] = useState(1);
   const [selectedFlavor, setSelectedFlavor] = useState('');
   const [quantity, setQuantity] = useState(1);
   const [selectedQuantity, setSelectedQuantity] = useState('');
 
+  useEffect(() => {
+    loginAndGetToken().then((token) => {
+      if (id) {
+        fetchSupplementDetails(token, id).then(setSupplementData);
+      }
+    });
+  }, [id]);
 
   const handleFlavorChange = (event) => {
   console.log(event); 
@@ -36,45 +43,6 @@ const SupplementsDetails = () => {
 
     console.log(event.target.value); 
     setSelectedQuantity(event.target.value);
-  };
-
- 
-  useEffect(() => {
-    axios
-      .post(
-        "http://127.0.0.1:8741/api/login_check",
-        { email: "ilyes@email.com", password: "1234" },
-        { headers: { "Content-Type": "application/json" } }
-      )
-      .then((res) => res.data)
-      .then((res) => res.token)
-      .then((token) => fetchSupplementDetails(token));
-  }, [id]);
-
-  const fetchSupplementDetails = (token: string) => {
-    axios
-      .get(`http://127.0.0.1:8741/api/supplements/${id}`, {
-        headers: { Authorization: `Bearer ${token}` }
-      })
-      .then((res) => res.data)
-      .then((supplementData) => setSupplementData(supplementData));
-  };
-
-  const radioLabelStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    cursor: 'pointer',
-    padding: '5px 10px',
-    borderRadius: '20px',
-    margin: '5px',
-    backgroundColor: 'white',
-    transition: 'background-color 0.3s ease',
-  };
-
-  const selectedRadioStyle = {
-    backgroundColor: '#007bff',
-    color: 'white',
-    borderColor: '#007bff',
   };
 
   const addToBasket = useCallback(() => {
@@ -118,7 +86,7 @@ const SupplementsDetails = () => {
           <Card.Body className="d-flex flex-column align-items-center p-4" style={{ backgroundColor: '#f8f9fa', borderRadius: '10px', color: '#343a40', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.05)' }}>
               <Card.Title style={{ fontSize: '30px', fontWeight: '600', color: '#495057', marginBottom: '15px' }}>{supplementData.name}</Card.Title>
               <Typography level="h3" style={{ fontSize: '16px', color: '#6c757d', marginBottom: '7px' }}>
-                {supplementData.maker}
+                {supplementData.maker.map((m) => m.name_maker).join(", ")}
               </Typography>
 
               <BasicRating />
@@ -192,8 +160,7 @@ const SupplementsDetails = () => {
     </RetailComponenent>
     <div style={{ justifyContent: 'center', alignItems: 'center' }}>
   <Card>
-      <TabsSupplements /> 
-              
+      <TabsSupplements />     
   </Card>
 </div></>
   );

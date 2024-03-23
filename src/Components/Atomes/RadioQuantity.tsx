@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Quantity } from '../../Services/Data/Supplement';
+import { Quantity } from '../../Services/Data/SupplementInterfaces';
 
 interface RadioQuantityProps {
     quantities: Quantity[];

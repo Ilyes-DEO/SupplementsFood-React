@@ -3,47 +3,21 @@ import AspectRatio from '@mui/joy/AspectRatio';
 import Card from '@mui/joy/Card';
 import CardContent from '@mui/joy/CardContent';
 import Typography from '@mui/joy/Typography';
-import { Link as RouterLink } from 'react-router-dom'; // Importez le composant Link de React Router
+import { Link as RouterLink } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Supplements } from '../../Services/Data/SupplementInterfaces'; 
+import { loginAndGetToken, fetchSupplementsList } from '../../Services/Data/apiServices';
+
 
 const PopularySupplementsCards = () => {
-  const [supplementData, setSupplement] = useState([]);
+  const [supplementData, setSupplement] = useState<Supplements[]>([]);
 
-  interface Supplements {
-    id: number;
-    name: string;
-    img_supplements: string;
-    category: string;
-    qte_stock: number;
-    price: number;
-    maker: Maker[];
-  }
-  
-  interface Maker {
-    id: number;
-    name_maker: string;
-  }
   useEffect(() => {
-    axios
-      .post(
-        "http://127.0.0.1:8741/api/login_check",
-        { email: "ilyes@email.com", password: "1234" },
-        { headers: { "Content-Type": "application/json" } }
-      )
-      .then((res) => res.data)
-      .then((res) => res.token)
-      .then((token) => fetchSupplementslist(token));
+    loginAndGetToken().then((token) => {
+      fetchSupplementsList(token).then(setSupplement);
+    });
   }, []);
-
-  const fetchSupplementslist = (token) => {
-    axios
-      .get("http://127.0.0.1:8741/api/supplements", {
-        headers: { Authorization: `Bearer ${token}` }
-      })
-      .then((res) => res.data)
-      .then((supplementData) => setSupplement(supplementData));
-  };
 
   return (
     <>
@@ -79,3 +53,4 @@ const PopularySupplementsCards = () => {
 };
 
 export default PopularySupplementsCards;
+ 

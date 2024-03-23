@@ -6,7 +6,7 @@ import { TitleHome } from '../Atomes/TitleHome';
 import { CarouselDemo } from '../Molecules/Carousel';
 import { FooterComponent } from '../Organismes/Footer';
 import { TabsSupplements } from '../Organismes/TabsSupplements';
-import CategoryFilter from '../CategoryFilter';
+import CategoryFilter from './FoodSupplementsPage';
 import PopularySupplementsCards from '../Organismes/PopularySupplements';
 const HomePage = () => {
   return (
@@ -15,7 +15,7 @@ const HomePage = () => {
         <CarouselDemo />
         <BarStepper />
         <ImageBand />
-        <TitleHome />
+        <TitleHome title='NOS PRODUITS LES PLUS POPULAIRES'/>
         <PopularySupplementsCards />
         <FooterComponent />
         </div>
