@@ -1,0 +1,18 @@
+.card {
+    transition: transform 150ms ease, box-shadow 150ms ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.01);
+    box-shadow: var(--mantine-shadow-md);
+  }
+
+.cardVideo {
+  width: 200px;
+  height: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  height: 100vh; /* Prend la pleine hauteur de la fenêtre du navigateur */
+}

@@ -1,9 +1,14 @@
 .controls {
     transition: opacity 150ms ease;
     opacity: 0;
+    
   }
   
   .root {
+    width: 200px;
+    height: 300px;
+    margin-left: 10px;
+    margin-right: 10px;
     &:hover {
       .controls {
         opacity: 1;

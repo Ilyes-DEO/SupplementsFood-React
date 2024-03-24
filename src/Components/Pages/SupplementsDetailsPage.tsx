@@ -5,15 +5,15 @@ import { useParams } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import { Button } from 'react-bootstrap';
 import Typography from '@mui/joy/Typography';
-import BasicRating from './Atomes/Rating';
-import RetailComponenent from './Molecules/DetailContainer';
-import  SelectFlavor  from './Atomes/SelectFlavor';
-import RadioContainer from './Molecules/RadioContainer';
-import RadioQuantity from './Atomes/RadioQuantity';
-import SelectEmpty from './Atomes/SelectEmpty';
-import { TabsSupplements } from './Organismes/TabsSupplements';
-import { Supplements } from '../Services/Data/SupplementInterfaces'; 
-import { loginAndGetToken, fetchSupplementDetails } from '../Services/Data/apiServices';
+import BasicRating from '../Atomes/Rating';
+import RetailComponenent from '../Molecules/DetailContainer';
+import  SelectFlavor  from '../Atomes/SelectFlavor';
+import RadioContainer from '../Molecules/RadioContainer';
+import RadioQuantity from '../Atomes/RadioQuantity';
+import SelectEmpty from '../Atomes/SelectEmpty';
+import { TabsSupplements } from '../Organismes/TabsSupplements';
+import { Supplements } from '../../Services/Data/SupplementInterfaces'; 
+import { loginAndGetToken, fetchSupplementDetails } from '../../Services/Data/apiServices';
 
 const SupplementsDetails = () => {
   const { id } = useParams();

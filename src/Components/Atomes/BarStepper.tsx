@@ -23,9 +23,6 @@ export function BarStepper() {
     label="Livraison" description="Livraison gratuite dès 50€" />
     <Stepper.Step icon={<IconCreditCard style={{ width: rem(25), height: rem(25) }} />}
     label="Paiement" description="100% sécurisé" />
-    <Stepper.Step 
-    icon={<IconCreditCard style={{ width: rem(25), height: rem(25) }} />}
-    label="Step 2" description="Verify emailv vv v v v" />
     </Stepper>
 </Box>
   );

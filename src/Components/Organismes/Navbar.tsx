@@ -50,7 +50,7 @@ export function Navbar() {
     <Box>
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
-        <img src={NutriZenoPng} alt="NutriZeno Logo" style={{ height: '10vh' }} />
+        <img src={NutriZenoPng} alt="NutriZeno Logo"  />
 
           <Group h="100%" gap={0} visibleFrom="sm">
             <a href="/" className={`${classes.link} ${classes.linkText}`}>
