@@ -2,7 +2,7 @@ import React from 'react';
 import { BarStepper } from '../Atomes/BarStepper';
 import { ImageBand } from '../Molecules/ImageBand';
 import { TitleHome } from '../Atomes/TitleHome';
-import {CarouselDemo} from '../Molecules/Carousel';
+import {HeroImageBackground} from '../Molecules/Carousel';
 import { FooterComponent } from '../Organismes/Footer';
 import PopularySupplementsCards from '../Organismes/PopularySupplements';
 import {ArticleCardImage} from '../Molecules/CategoryCardImage';
@@ -11,7 +11,7 @@ const HomePage = () => {
   return (
     <div>
         <div >
-        <CarouselDemo />
+        <HeroImageBackground />
         <BarStepper />
         <ImageBand height='150px' backgroundColor='#0C090A'/>
         <div style={{marginTop: '50px'}} />

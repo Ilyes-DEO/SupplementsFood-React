@@ -1,33 +1,38 @@
-import { useRef } from 'react';
-import Autoplay from 'embla-carousel-autoplay';
-import { Carousel } from '@mantine/carousel';
-import { Image } from '@mantine/core';
-import { Box } from '@mantine/core';
+import cx from 'clsx';
+import { Title, Text, Container, Button, Overlay, Box } from '@mantine/core';
+import classes from '../MantineCss/Carousel.module.css';
 
-export function CarouselDemo() {
-    const autoplay = useRef(Autoplay({ delay: 2000 }));
-    return (
+export function HeroImageBackground() {
+  return (
     <Box pb={10}>
-      <Carousel
-        withIndicators
-        style={{ height: '600px' }} 
-        plugins={[autoplay.current]}
-        onMouseEnter={autoplay.current.stop}
-        onMouseLeave={autoplay.current.reset}
-      >
-        <Carousel.Slide>
-          <Image
-            src="https://images.unsplash.com/photo-1610360393708-368da8ca8763?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="First slide"
-            fit="cover"
-            style={{ height: '600px' }} 
-        />
-        </Carousel.Slide>
-        <Carousel.Slide>
-            
-        </Carousel.Slide>
-        <Carousel.Slide></Carousel.Slide>
-      </Carousel>
-      </Box>
-    );
-  }
+    <div className={classes.wrapper}>
+      <Overlay color="#000" opacity={0.65} zIndex={1} />
+
+      <div className={classes.inner}>
+        <Title className={classes.title}>
+          Automated AI code reviews for{' '}
+          <Text component="span" inherit className={classes.highlight}>
+            any stack
+          </Text>
+        </Title>
+
+        <Container size={640}>
+          <Text size="lg" className={classes.description}>
+            Build more reliable software with AI companion. AI is also trained to detect lazy
+            developers who do nothing and just complain on Twitter.
+          </Text>
+        </Container>
+
+        <div className={classes.controls}>
+          <Button className={classes.control} variant="white" size="lg">
+            Get started
+          </Button>
+          <Button className={cx(classes.control, classes.secondaryControl)} size="lg">
+            Live demo
+          </Button>
+        </div>
+      </div>
+    </div>
+    </Box>
+  );
+}
