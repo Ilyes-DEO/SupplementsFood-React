@@ -7,6 +7,7 @@ import LoginForm from './src/Components/LoginForm';
 import Basket from './src/Components/Basket';
 import { AuthProvider } from './src/Components/AuthContext';
 import HomePage from './src/Components/Pages/HomePage';
+import ChatComponent from './src/GPT-AI/ChatComponents';
 function App() {
   return (
     <AuthProvider>
@@ -19,6 +20,7 @@ function App() {
           <Route path="/Supplements/:id" element={<SupplementsDetails />} />
           <Route path="/LoginForm" element={<LoginForm />} />
           <Route path="/Basket" element={<Basket />} />
+          <Route path="/NUTRIA" element={<ChatComponent />} />
         </Routes>
     </div>
     </AuthProvider>
