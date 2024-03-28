@@ -60,7 +60,7 @@ export function Navbar() {
             <a href="/Supplements" className={`${classes.link} ${classes.linkText}`}>
               COMPLEMENTS ALIMENTAIRES
             </a>
-            <a href="#" className={`${classes.link} ${classes.linkText}`}>
+            <a href="/NUTRIA" className={`${classes.link} ${classes.linkText}`}>
               NUTRIA
             </a>
             <a href="#" className={`${classes.link} ${classes.linkText}`}>
